@@ -9,6 +9,7 @@ import transactionRoutes from "./routes/transactionRoutes";
 import dashboardRoutes from "./routes/dashboardRoutes";
 import userRoutes from "./routes/userRoutes";
 import { globalLimiter } from "./middleware/rateLimiter";
+import { setupSwagger } from "./utils/swagger";
 
 dotenv.config();
 
@@ -21,6 +22,8 @@ app.use(express.json());
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+
+setupSwagger(app);
 
 // Serve static files from the frontend
 // Correcting path: src is at root/src, frontend is at root/frontend
