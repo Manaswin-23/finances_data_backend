@@ -1,0 +1,45 @@
+  console.log
+    ◇ injecting env (0) from .env // tip: ⌘ override existing { override: true }
+
+      at _log (node_modules/dotenv/lib/main.js:131:11)
+
+FAIL src/__tests__/integration.test.ts
+  Finance API Comprehensive Integration Tests
+    Authentication API
+      √ should reject login with wrong password (269 ms)
+      √ should reject registration with duplicate email (7 ms)
+    Transactions API full flow (CRUD, Search, Soft Delete)
+      √ should allow ADMIN to create multiple transactions (26 ms)
+      √ should find transaction by search text (10 ms)
+      √ should get transaction detail (8 ms)
+      √ should allow ADMIN to update a transaction (13 ms)
+      √ should soft delete a transaction (20 ms)
+    Dashboard API aggregations check
+      × should accurately reflect only active transactions (17 ms)
+    Users API
+      √ should allow ADMIN to list users (7 ms)
+      √ should allow ADMIN to update user role (11 ms)
+      √ should allow ADMIN to update user status (10 ms)
+
+  ● Finance API Comprehensive Integration Tests › Dashboard API aggregations check › should accurately reflect only active transactions
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 5000
+    Received: 0
+
+      150 |       expect(res.status).toBe(200);
+      151 |       // Soft-deleted expense of 200 shouldn't be counted
+    > 152 |       expect(res.body.data.totalIncome).toBe(5000);
+          |                                         ^
+      153 |       expect(res.body.data.totalExpenses).toBe(0); 
+      154 |     });
+      155 |   });
+
+      at Object.<anonymous> (src/__tests__/integration.test.ts:152:41)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 10 passed, 11 total
+Snapshots:   0 total
+Time:        3.41 s, estimated 4 s
+Ran all test suites.

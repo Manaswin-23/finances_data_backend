@@ -1,0 +1,56 @@
+Sending login request to http://localhost:3000/api/auth/login...
+
+--- Login Response ---
+{
+  "status": "success",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUzNmQ3MzM5LWY1MjYtNDNmYS1hNjFkLTgxZDVlNmFjNzY2MSIsImlhdCI6MTc3NTE5NTM3MCwiZXhwIjoxNzc1ODAwMTcwfQ.N0VxlCAzPCv3aAGF7kvFBXPKsFyMgx56O0Uij-Gm_1s",
+  "data": {
+    "user": {
+      "id": "e36d7339-f526-43fa-a61d-81d5e6ac7661",
+      "email": "admin@example.com",
+      "name": "Admin User",
+      "role": "ADMIN"
+    }
+  }
+}
+
+Sending GET request to http://localhost:3000/api/dashboard/summary...
+
+--- Dashboard Summary Response ---
+{
+  "status": "success",
+  "data": {
+    "totalIncome": 5000,
+    "totalExpenses": 0,
+    "netBalance": 5000,
+    "categoryBreakdown": [],
+    "recentActivity": [
+      {
+        "id": "06055c36-228e-4676-9f70-6423fdd46c58",
+        "amount": 5000,
+        "type": "INCOME",
+        "category": "Salary",
+        "date": "2026-04-03T05:40:55.762Z",
+        "description": "Monthly salary",
+        "userId": "e36d7339-f526-43fa-a61d-81d5e6ac7661",
+        "createdAt": "2026-04-03T05:40:55.764Z",
+        "updatedAt": "2026-04-03T05:40:55.764Z",
+        "deletedAt": null
+      }
+    ],
+    "trendsRaw": [
+      {
+        "id": "06055c36-228e-4676-9f70-6423fdd46c58",
+        "amount": 5000,
+        "type": "INCOME",
+        "category": "Salary",
+        "date": "2026-04-03T05:40:55.762Z",
+        "description": "Monthly salary",
+        "userId": "e36d7339-f526-43fa-a61d-81d5e6ac7661",
+        "createdAt": "2026-04-03T05:40:55.764Z",
+        "updatedAt": "2026-04-03T05:40:55.764Z",
+        "deletedAt": null
+      }
+    ]
+  }
+}
