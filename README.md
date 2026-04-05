@@ -188,6 +188,9 @@ curl -X POST http://localhost:3000/api/auth/login \
 
 ## 📚 Complete API Reference
 
+The interactive API documentation is available via **Swagger UI** at:
+`http://localhost:3000/api-docs`
+
 All routes are prefixed with `/api`. Protected routes require:
 ```
 Authorization: Bearer <jwt_token>
